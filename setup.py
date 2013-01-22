@@ -14,6 +14,9 @@ setup(
     include_package_data=True,
     zip_safe=False,
     platforms='any',
+    install_requires=[
+        'requests>=1.1',
+    ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
