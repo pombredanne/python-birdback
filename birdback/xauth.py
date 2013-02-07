@@ -118,7 +118,7 @@ class Client(object):
                 r.url, kwargs.get('data', {}), self.digestmod)
 
         s = requests.Session()
-        return s.send(r)
+        return s.send(r, verify=False)
 
     def _handle_token(self, headers):
         """Sets authentication token values from headers.
