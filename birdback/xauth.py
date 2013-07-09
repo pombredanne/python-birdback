@@ -38,7 +38,7 @@ def compute_footprint(method, url, datas):
 
     if len(datas) > 0:
         if hasattr(datas, 'keys'):
-            datas = ((key, utf8(datas[key])) for key in sorted(datas.keys()))
+            datas = [(key, utf8(datas[key])) for key in sorted(datas.keys())]
             datas = urlencode(datas)
         else:
             datas = hashlib.sha256(str(datas)).hexdigest()
