@@ -35,10 +35,16 @@ def compute_footprint(method, url, datas):
         url = "%s?%s" % (parsed.path, parsed.query)
     else:
         url = parsed.path
+
     if len(datas) > 0:
-        datas = [(key, utf8(datas[key])) \
-            for key in sorted(datas.keys())]
-    return "%s&%s&%s" % (method.upper(), url, urlencode(datas))
+        if hasattr(datas, 'keys'):
+            datas = [(key, utf8(datas[key])) for key in sorted(datas.keys())]
+            datas = urlencode(datas)
+        else:
+            datas = hashlib.sha256(str(datas)).hexdigest()
+    else:
+        datas = ''
+    return "%s&%s&%s" % (method.upper(), url, datas)
 
 
 def compute_signature(secret, method, url, datas={},
