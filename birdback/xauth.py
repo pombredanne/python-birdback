@@ -69,7 +69,8 @@ class Client(object):
     SIGNATURE_HEADER = SIGNATURE_HEADER
     CONSUMER_ID_HEADER = CONSUMER_ID_HEADER
 
-    def __init__(self, api_url, token_url, consumer_id=None,
+    def __init__(self, api_url="https://api.birdback.com",
+            token_url="/auth/token/", consumer_id=None,
             consumer_secret=None, token_id=None, token_secret=None,
             digestmod=hashlib.sha256):
         """Initializes a new XAuth client.
