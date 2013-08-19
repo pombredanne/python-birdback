@@ -2,8 +2,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='python-birdback',
-    version='0.1b3',
+    name='birdback',
+    version='0.1b5',
     url='https://github.com/Birdback/python-birdback.git',
     license='mit',
     author='Jean-Philippe Serafin',
