@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from birdback.xauth import compute_nonce, compute_footprint, utf8
+from birdback.xauth import compute_footprint, utf8
 
 
 class ComputeFootprintTest(unittest.TestCase):
